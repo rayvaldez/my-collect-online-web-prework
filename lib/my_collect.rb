@@ -1,8 +1,11 @@
 def my_collect(array)
-  array = []
+  empty_array = []
   counter = 0
-  my_collect(array) do |x|
+
+  while counter < array.length
+    new_array = yield array[counter]
     counter += 1
+    empty_array << new_array 
   end
-array
+  empty_array
 end
